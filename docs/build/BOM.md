@@ -37,37 +37,20 @@ There are not yet vendors selling the Sofle Pico.
 | MX Hot-swap Sockets | 58 | The PCB requires sockets. Switches cannot be soldered directly to the board. | [Aliexpress](https://www.aliexpress.us/item/3256803687338432.html) |
 | Diodes | 60 | Surface mount SOD-123 1N4148, or through-hole 1N4148 diode. These are common, any old one should do. Through hole is usually easier to solder. | SMD: [AliExpress](https://www.aliexpress.us/item/2251832663565152.html) [JLCPCB](https://jlcpcb.com/partdetail/3368026-1N4148SOD123/C2972760) Through-hole: [AliExpress](https://www.aliexpress.us/item/2251832473773777.html) |
 | Schottky diodes | 2 | Through-hole 1N5817 diodes. These are common, any old one should do. Since you only need 2, consider getting it as part of diode kit. |  [AliExpress](https://www.aliexpress.us/item/3256805521351480.html) |
-| Raspberry Pi Picos | 2 | PCB is specifically designed with the Official Pico and YD-2040 type clone in mind, however several [other clone types](https://docs.google.com/spreadsheets/d/1LPjy6F5lHfUkmsrM5zlZmc5auYy5YBakW8Awe6hYFWo) should be compatible (Waveshare, WeAct, EstarDyn, Tenstar). Although the Pico is designed with a surface mount option, the Sofle Pico is designed assuming the Pico is soldered with [headers](https://www.sparkfun.com/products/17907). The Official Pico uses Micro USB, which has been known to snap off. The USB-C variants are recommended. | [AliExpress: YD-2040](https://www.aliexpress.us/item/3256803909832318.html), [AliExpress: Tenstar](https://www.aliexpress.us/item/3256805868694592.html), [Official Raspberry Pi Resellers](https://www.raspberrypi.com/products/raspberry-pi-pico/)|
+| Raspberry Pi Picos | 2 | PCB is specifically designed with the Official Pico and YD-2040 type clone in mind, however several [other clone types](https://docs.google.com/spreadsheets/d/1LPjy6F5lHfUkmsrM5zlZmc5auYy5YBakW8Awe6hYFWo) should be compatible (Waveshare, WeAct, EstarDyn, Tenstar). Although the Pico is designed with a surface mount option, the Sofle Pico is designed assuming the Pico is soldered with [headers](https://www.sparkfun.com/products/17907). The Official Pico uses Micro USB, which has been known to snap off. The USB-C variants are recommended. ([Avoid 'tenstar' variants, they have a pinout that is non-compliant with the official Pico](https://github.com/JellyTitan/Sofle-Pico/discussions/29#discussioncomment-10584762)). | [AliExpress: YD-2040](https://www.aliexpress.us/item/3256803909832318.html), [Official Raspberry Pi Resellers](https://www.raspberrypi.com/products/raspberry-pi-pico/)|
 | TRRS Jacks | 2 | PJ-320A | [AliExpress](https://www.aliexpress.us/item/2255800474897706.html) |
 | TRRS  (3.5mm "Headphone" Cable) | 1 | TRRS ("4 pole" required) | |
 | MX Style Switches | 58 | 3-pin or 5-pin will work. If you're not using a keyplate, you'll want 5-pin.| 
 | Key Caps | 58 | | |
 | Rotary Encoders and Caps | 2 | EC-11 Rotary Encoder. 20mm stem is the most common. Make sure the knob matches the encoder's shaft diameter, depth and shape. SA keycaps can be quite tall, so you may want to use tall knobs as well.| [AliExpress 20mm](https://www.aliexpress.us/item/2261799870168498.html) |
-| Micro USB Cable or USB-C Cable | 1 | USB cable for connecting the keyboard to your computer, dependent on what the Pico you chose uses. Some inexpensive USB-C cables are not built to spec, and [may not be reversible](/troubleshooting#plug-in-the-usb-cable-and-nothing-happens). | 
-
-<hr>
-
-### Optional Parts
-
-#### Optional - RGB
-
-These parts are necessary for the RGB lighting.
-
-| Name | Count | Remarks | Potential Storefront |
-| ---- | ----- | ------- | -------------------- |
-| 74AHCT1G125 Voltage Level Shifter/ Bus Buffer | 2 | SOT23-5 Footprint <br/> <br/> Optional - but not technically required. The Pico runs at 3.3V while the LEDs require 5V logic. If you omit this level shifter, the first LED in the circuit acts as a level shifter. In [casual tests](/build-log#thermal-imaging-led-test-conclusion), omitting the level shifter makes the board run about 6°C hotter, which is still in the acceptable Pico operating range. I'm not sure if this will eventually burn out the LEDs prematurely. | [AliExpress](https://www.aliexpress.us/item/3256803831434811.html) [JLCPCB](https://jlcpcb.com/partdetail/TexasInstruments-SN74AHCT1G125DBVR/C7484)|
-| RGB SMD LEDs SK6803MINI-E | 74 | The 3MA SK6803MINI-E must be used instead of the traditional 12MA SK6812MINI-E. The SK6803MINIE-E has a smaller current draw, allowing the LEDs to be very bright at manageable wattage. | [AliExpress](https://www.aliexpress.us/item/3256803450292556.html) [JLCPCB](https://jlcpcb.com/partdetail/Normand-SK6803MINIE/C5184589)|
-
-<hr>
-
-#### Optional - OLED
-
-| Name | Count | Remarks | Potential Storefront |
-| ---- | ----- | ------- | -------------------- |
+| Micro USB Cable or USB-C Cable | 1 | USB cable for connecting the keyboard to your computer, dependent on what the Pico you chose uses. Some inexpensive USB-C cables are not built to spec, and [may not be reversible](/troubleshooting#plug-in-the-usb-cable-and-nothing-happens). |
+| RGB SMD LEDs SK6803MINI-E | 58 | The 3MA SK68<b>03</b>MINI-E must be used instead of the 12MA SK68<b>12</b>MINI-E that was used in the Sofle V2. The SK68<b>03</b>MINIE-E has a smaller current draw, allowing the LEDs to be very bright at manageable wattage. I recommend ordering a few extra of these because they can be tricky to solder. | [AliExpress](https://www.aliexpress.us/item/3256803450292556.html) [JLCPCB](https://jlcpcb.com/partdetail/Normand-SK6803MINIE/C5184589)|
 | SSD1306 128x64 | 2 | These are monochromatic, usually white, yellow, or blue. Note: There are two common variants of this OLED. One has circular holes in the corner, and the other has oval holes. These variants have the GND/VCC pins switched. The version with the round holes is preferred, but either will work. The round holes is installed 10mm higher, so it is preferred based solely on aesthetics. If you come across more variants or different pin positions, please submit a PR.<br>![Sofle V3](/images/build_guide_pico/oled_round.png) <br>![Sofle V3](/images/build_guide_pico/oled_oval.png) | [AliExpress](https://www.aliexpress.us/item/2251832457635357.html) |
 | 4 pin female headers | 2 | 2.54 pitch. ~8mm high is preferable if you'll be socketing the MCU. If you can't find 8mm, ~6mm or ~10mm is fine. ![Sofle V3](/images/build_guide_pico/sofle_pico_4-pin_femalesockets.png)|[Aliexpress](https://www.aliexpress.us/item/2251832667924622.html) |
 
 <hr>
+
+### Optional Parts
 
 #### Optional - MCU Sockets
 
